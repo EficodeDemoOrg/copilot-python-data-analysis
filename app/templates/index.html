@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer Insights Analytics Dashboard</title>
+    <style>
+        /* Yarr! Enhanced styling for data analysts who appreciate good UX! */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            font-weight: 300;
+        }
+        
+        .controls-panel {
+            background-color: #f8f9fa;
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border-left: 4px solid #3498db;
+        }
+        
+        .controls-panel h3 {
+            margin-top: 0;
+            color: #2c3e50;
+            font-weight: 600;
+        }
+        
+        .control-group {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .control-group label {
+            font-weight: 600;
+            min-width: 150px;
+            color: #34495e;
+        }
+        
+        .control-group select {
+            flex: 1;
+            max-width: 300px;
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            font-size: 14px;
+            background-color: white;
+            transition: border-color 0.3s ease;
+        }
+        
+        .control-group select:focus {
+            outline: none;
+            border-color: #3498db;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+        }
+        
+        .analyze-btn {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+        
+        .analyze-btn:hover {
+            background: linear-gradient(135deg, #2980b9, #21618c);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+        }
+        
+        .analysis-info {
+            background-color: #e8f5e8;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border-left: 4px solid #27ae60;
+        }
+        
+        .analysis-info h3 {
+            margin-top: 0;
+            color: #27ae60;
+        }
+        
+        .chart-container {
+            position: relative;
+            height: 600px;
+            margin: 30px 0;
+            background-color: #fafafa;
+            border-radius: 8px;
+            padding: 20px;
+        }
+        
+        .loading {
+            text-align: center;
+            color: #7f8c8d;
+            font-size: 1.2em;
+            margin: 50px 0;
+        }
+        
+        .error {
+            background-color: #e74c3c;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #7f8c8d;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Developer Insights Analytics Dashboard</h1>
+        
+        <!-- Data Analyst Controls -->
+        <div class="controls-panel">
+            <h3>🔍 Analysis Configuration</h3>
+            <div class="control-group">
+                <label for="dataSource">Data Source:</label>
+                <select id="dataSource">
+                    <option value="stackoverflow_2023">Stack Overflow 2023 Survey</option>
+                </select>
+            </div>
+            
+            <div class="control-group">
+                <label for="analysisColumn">Technology Category:</label>
+                <select id="analysisColumn">
+                    <option value="LanguageHaveWorkedWith">Programming Languages (Used)</option>
+                    <option value="LanguageWantToWorkWith">Programming Languages (Want to Use)</option>
+                    <option value="DatabaseHaveWorkedWith">Databases (Used)</option>
+                    <option value="DatabaseWantToWorkWith">Databases (Want to Use)</option>
+                    <option value="PlatformHaveWorkedWith">Platforms (Used)</option>
+                    <option value="PlatformWantToWorkWith">Platforms (Want to Use)</option>
+                    <option value="WebframeHaveWorkedWith">Web Frameworks (Used)</option>
+                    <option value="WebframeWantToWorkWith">Web Frameworks (Want to Use)</option>
+                </select>
+            </div>
+            
+            <div class="control-group">
+                <label for="topN">Number of Results:</label>
+                <select id="topN">
+                    <option value="10">Top 10</option>
+                    <option value="15">Top 15</option>
+                    <option value="20">Top 20</option>
+                    <option value="25">Top 25</option>
+                </select>
+            </div>
+            
+            <button id="analyzeButton" class="analyze-btn">🚀 Run Analysis</button>
+        </div>
+        
+        <!-- Analysis Results Info -->
+        <div id="analysisInfo" class="analysis-info" style="display: none;">
+            <h3>📊 Analysis Results</h3>
+            <div id="analysisDetails"></div>
+        </div>
+        
+        <div id="loadingMessage" class="loading">
+            🏴‍☠️ Ahoy! Loading the treasure data, matey...
+        </div>
+        
+        <div id="errorMessage" class="error" style="display: none;">
+            Shiver me timbers! Something went wrong loading the data!
+        </div>
+        
+        <div class="chart-container">
+            <canvas id="technologyChart" style="display: none;"></canvas>
+        </div>
+        
+        <div class="footer">
+            <p>⚓ Data Analyst's Treasure Chest - Explore Developer Survey Data ⚓</p>
+            <p><small>Built for data analysts who love exploring technology trends and developer insights</small></p>
+        </div>
+    </div>
+
+    <!-- Yarr! Load Chart.js from the CDN like getting supplies from port -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <script>
+        // Yarr! Enhanced JavaScript for data analysts who demand flexibility!
+        
+        let currentChart = null;
+        
+        // Initialize the dashboard when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set up event listeners
+            document.getElementById('analyzeButton').addEventListener('click', runAnalysis);
+            
+            // Run initial analysis with default settings
+            runAnalysis();
+        });
+        
+        async function runAnalysis() {
+            try {
+                showLoading();
+                
+                // Get selected parameters
+                const dataSource = document.getElementById('dataSource').value;
+                const analysisColumn = document.getElementById('analysisColumn').value;
+                const topN = document.getElementById('topN').value;
+                
+                // Build API URL with parameters
+                const url = `/api/analysis/technology-usage?source=${dataSource}&column=${analysisColumn}&top_n=${topN}`;
+                
+                // Fetch the analysis data
+                const response = await fetch(url);
+                
+                if (!response.ok) {
+                    const errorData = await response.json();
+                    throw new Error(errorData.detail || `HTTP error! status: ${response.status}`);
+                }
+                
+                const data = await response.json();
+                
+                // Show results
+                showAnalysisResults(data);
+                createTechnologyChart(data);
+                
+            } catch (error) {
+                console.error('Blimey! Error running analysis:', error);
+                showError(error.message);
+            }
+        }
+        
+        function showLoading() {
+            document.getElementById('loadingMessage').style.display = 'block';
+            document.getElementById('errorMessage').style.display = 'none';
+            document.getElementById('analysisInfo').style.display = 'none';
+            document.getElementById('technologyChart').style.display = 'none';
+        }
+        
+        function showError(message) {
+            document.getElementById('loadingMessage').style.display = 'none';
+            document.getElementById('errorMessage').style.display = 'block';
+            document.getElementById('errorMessage').textContent = `Arrr! ${message}`;
+            document.getElementById('analysisInfo').style.display = 'none';
+        }
+        
+        function showAnalysisResults(data) {
+            document.getElementById('loadingMessage').style.display = 'none';
+            document.getElementById('errorMessage').style.display = 'none';
+            document.getElementById('analysisInfo').style.display = 'block';
+            document.getElementById('technologyChart').style.display = 'block';
+            
+            // Update analysis details
+            const analysisDetails = document.getElementById('analysisDetails');
+            const columnName = document.getElementById('analysisColumn').selectedOptions[0].textContent;
+            
+            analysisDetails.innerHTML = `
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 15px;">
+                    <div class="stat-card">
+                        <div class="stat-value">${data.total_responses.toLocaleString()}</div>
+                        <div class="stat-label">Total Responses</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">${data.unique_technologies}</div>
+                        <div class="stat-label">Unique Technologies</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">${data.labels.length}</div>
+                        <div class="stat-label">Showing Top Results</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">${columnName}</div>
+                        <div class="stat-label">Analysis Category</div>
+                    </div>
+                </div>
+            `;
+        }
+        
+        function createTechnologyChart(data) {
+            // Destroy existing chart if it exists
+            if (currentChart) {
+                currentChart.destroy();
+            }
+            
+            const ctx = document.getElementById('technologyChart').getContext('2d');
+            const columnName = document.getElementById('analysisColumn').selectedOptions[0].textContent;
+            
+            // Generate colors based on data length
+            const colors = generateColors(data.labels.length);
+            
+            currentChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: data.labels,
+                    datasets: [{
+                        label: 'Number of Developers',
+                        data: data.values,
+                        backgroundColor: colors.background,
+                        borderColor: colors.border,
+                        borderWidth: 2,
+                        borderRadius: 6,
+                        borderSkipped: false,
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: `${columnName} - Developer Survey Analysis`,
+                            font: {
+                                size: 18,
+                                weight: 'bold'
+                            },
+                            padding: 20
+                        },
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    const value = context.parsed.y;
+                                    const percentage = ((value / data.total_responses) * 100).toFixed(1);
+                                    return `${value.toLocaleString()} developers (${percentage}%)`;
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Number of Developers',
+                                font: {
+                                    size: 14,
+                                    weight: 'bold'
+                                }
+                            },
+                            grid: {
+                                color: 'rgba(0, 0, 0, 0.05)'
+                            },
+                            ticks: {
+                                callback: function(value) {
+                                    return value.toLocaleString();
+                                }
+                            }
+                        },
+                        x: {
+                            title: {
+                                display: true,
+                                text: columnName,
+                                font: {
+                                    size: 14,
+                                    weight: 'bold'
+                                }
+                            },
+                            ticks: {
+                                maxRotation: 45,
+                                minRotation: 0
+                            },
+                            grid: {
+                                display: false
+                            }
+                        }
+                    },
+                    animation: {
+                        duration: 1500,
+                        easing: 'easeInOutQuart'
+                    },
+                    interaction: {
+                        intersect: false,
+                        mode: 'index'
+                    }
+                }
+            });
+        }
+        
+        function generateColors(count) {
+            const baseColors = [
+                '#3498db', '#e74c3c', '#2ecc71', '#f39c12', '#9b59b6',
+                '#1abc9c', '#34495e', '#e67e22', '#95a5a6', '#d35400',
+                '#16a085', '#27ae60', '#2980b9', '#8e44ad', '#f1c40f',
+                '#e8ddd1', '#2c3e50', '#c0392b', '#7f8c8d', '#a93226'
+            ];
+            
+            const borderColors = [
+                '#2980b9', '#c0392b', '#27ae60', '#d68910', '#8e44ad',
+                '#16a085', '#2c3e50', '#d35400', '#7f8c8d', '#a93226',
+                '#138d75', '#239b56', '#2471a3', '#7d3c98', '#d4ac0d',
+                '#dc7633', '#1b2631', '#922b21', '#566573', '#78281f'
+            ];
+            
+            const background = [];
+            const border = [];
+            
+            for (let i = 0; i < count; i++) {
+                background.push(baseColors[i % baseColors.length]);
+                border.push(borderColors[i % borderColors.length]);
+            }
+            
+            return { background, border };
+        }
+    </script>
+    
+    <style>
+        .stat-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-left: 4px solid #3498db;
+        }
+        
+        .stat-value {
+            font-size: 2em;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            color: #7f8c8d;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+    </style>
+</body>
+</html>

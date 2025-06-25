@@ -1,0 +1,12 @@
+# For the web server
+fastapi
+uvicorn[standard]
+pydantic
+
+# For data handling
+pandas
+
+# For testing
+pytest
+requests
+httpx
