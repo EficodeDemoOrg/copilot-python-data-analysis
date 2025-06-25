@@ -77,6 +77,11 @@ Choose exercises based on your development interests and skill areas:
 - **Copilot Focus:** Security analysis, validation implementation, audit assistance
 - **Best for:** Security engineers, senior developers, production-focused teams
 
+**Exercise 6: Security and Code Quality** *(Time: 1-2 hours)*
+- **Skills:** Input validation, security headers, error handling, logging
+- **Copilot Focus:** Security analysis, validation implementation, audit assistance
+- **Best for:** Security engineers, senior developers, production-focused teams
+
 ---
 
 ## Exercise 1: Modular Architecture Refactoring

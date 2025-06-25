@@ -2,6 +2,8 @@
 
 Yarr! Welcome to the Developer Insights Analytics Dashboard, a comprehensive data analysis treasure chest that helps data analysts explore and visualize developer survey data! This be a flexible, full-stack application built with modern data analysis practices in mind.
 
+**🎓 Plus: Complete GitHub Copilot Training Materials!** This project includes comprehensive exercises from beginner to advanced level, teaching you to master AI-assisted development with real-world scenarios.
+
 ## 🗺️ Project Structure
 
 ```
@@ -23,6 +25,14 @@ python-fullstack/
 │   ├── data_config.py            # Data source configuration & analysis
 │   └── templates/
 │       └── index.html            # Analytics dashboard frontend
+│
+├── exercises/                     # 🎓 GitHub Copilot Training Materials
+│   ├── copilot-cheatsheet.md     # Quick reference guide
+│   ├── copilot-beginner-exercises.md     # Foundation skills (2-3 hrs)
+│   ├── copilot-advanced-exercises.md     # Mode selection guide
+│   ├── copilot-advanced-mode-a.md        # Hands-on track (8-12 hrs)
+│   ├── copilot-advanced-mode-b.md        # Agent-driven track (12-18 hrs)
+│   └── copilot-ci-exercise.md            # DevOps with Act (45-60 min)
 │
 └── tests/
     ├── __init__.py
@@ -277,4 +287,24 @@ This treasure be open source - use it freely for yer data analysis adventures, b
 
 *Built with ❤️ and ⚓ by data analyst pirates who love clean code, robust analysis, and beautiful visualizations*
 
-**Perfect for:** Data analysts, researchers, survey data exploration, technology trend analysis, and learning modern full-stack development with a focus on data science applications.
+**Perfect for:** 
+- **Data Analysis**: Survey data exploration, technology trend analysis, multi-source data integration
+- **Learning**: Modern full-stack development with Python/FastAPI and data science applications  
+- **GitHub Copilot Training**: Comprehensive exercises from beginner to advanced AI-assisted development
+- **DevOps**: Local CI/CD workflows and development optimization
+
+---
+
+## 🎓 GitHub Copilot Training Exercises
+
+| Exercise | Link | Description | Requirements |
+|----------|------|-------------|--------------|
+| **Cheatsheet** | [`copilot-cheatsheet.md`](exercises/copilot-cheatsheet.md) | Quick reference for context variables and commands | None |
+| **Beginner** | [`copilot-beginner-exercises.md`](exercises/copilot-beginner-exercises.md) | Foundation Copilot skills (2-3 hours) | Basic Python, VS Code + Copilot |
+| **Advanced Mode A** | [`copilot-advanced-mode-a.md`](exercises/copilot-advanced-mode-a.md) | Hands-on development track (8-12 hours) | Intermediate Python/FastAPI |
+| **Advanced Mode B** | [`copilot-advanced-mode-b.md`](exercises/copilot-advanced-mode-b.md) | Agent-driven development track (12-18 hours) | Advanced Python, architecture knowledge |
+| **CI/CD with Act** | [`copilot-ci-exercise.md`](exercises/copilot-ci-exercise.md) | Local GitHub Actions workflow (45-60 min) | **Docker Desktop, Act installation** |
+
+Choose based on your experience level and preferred learning style. Start with the Cheatsheet for quick reference or Beginner exercises if new to Copilot.
+
+---
