@@ -12,12 +12,10 @@ python-fullstack/
 ├── .gitignore
 ├── README.md
 ├── requirements.txt
+├── pyproject.toml
 │
 ├── data/
-│   └── kaggle_so_2023/            # Stack Overflow 2023 survey data
-│       ├── survey_results_public.csv
-│       ├── survey_results_schema.csv
-│       └── ...
+│   └── kaggle_so_2023_data.zip    # Stack Overflow 2023 survey data (auto-extracted on first run)
 │
 ├── app/
 │   ├── __init__.py
@@ -25,6 +23,10 @@ python-fullstack/
 │   ├── data_config.py            # Data source configuration & analysis
 │   └── templates/
 │       └── index.html            # Analytics dashboard frontend
+│
+├── docs/
+│   └── specifications/
+│       └── project_specs.md      # Technical specifications
 │
 ├── exercises/                     # 🎓 GitHub Copilot Training Materials
 │   ├── copilot-cheatsheet.md     # Quick reference guide
@@ -77,7 +79,8 @@ The application features an **intelligent data management system** designed for 
 - **Technology Analysis**: Columns with semicolon-separated tech lists are auto-detected
 
 #### 📦 Current Data Sources
-- **Stack Overflow 2023**: `kaggle_so_2023.zip` (20MB compressed → 151MB extracted)
+- **Stack Overflow 2023**: `kaggle_so_2023_data.zip` (20MB compressed → 151MB extracted)
+  - Extracts to `kaggle_so_2023_data/` folder on first application startup
   - Contains `survey_results_public.csv` with 89,000+ developer responses
   - Includes `survey_results_schema.csv` with column definitions
   - Pre-configured with 8 technology analysis categories
@@ -119,8 +122,8 @@ Perfect for data analysts working with multiple survey datasets:
 #### 📊 Example Multi-Source Setup
 ```
 data/
-├── kaggle_so_2023.zip              # Stack Overflow 2023
-├── kaggle_so_2023/                 # Auto-extracted
+├── kaggle_so_2023_data.zip         # Stack Overflow 2023
+├── kaggle_so_2023_data/            # Auto-extracted
 ├── github_dev_survey_2024.zip      # Your GitHub survey
 ├── github_dev_survey_2024/         # Auto-extracted
 ├── company_internal_survey.zip     # Internal survey
