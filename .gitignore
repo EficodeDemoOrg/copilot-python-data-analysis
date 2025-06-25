@@ -49,6 +49,9 @@ ehthumbs.db
 Thumbs.db
 
 # Data files (these be large treasures that shouldn't go in git)
+data/kaggle_so_2023/
+# But keep the zip file for distribution
+!data/kaggle_so_2023_data.zip
 data/*.csv
 data/*.json
 data/*.xlsx

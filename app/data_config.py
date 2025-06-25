@@ -6,6 +6,7 @@ This be where we define different data sources and their schemas, matey!
 
 import os
 import pandas as pd
+import zipfile
 from typing import Dict, List, Optional, Any
 from dataclasses import dataclass
 from pathlib import Path
@@ -42,7 +43,26 @@ class DataManager:
     def __init__(self, base_data_path: str):
         self.base_data_path = Path(base_data_path)
         self.data_sources = {}
+        self._ensure_data_extracted()
         self._setup_default_sources()
+    
+    def _ensure_data_extracted(self):
+        """
+        Yarr! Make sure the data treasure be extracted from zip if needed
+        """
+        zip_file_path = self.base_data_path / "kaggle_so_2023_data.zip"
+        extract_dir = self.base_data_path / "kaggle_so_2023"
+        
+        # If zip exists but extracted directory doesn't, extract it
+        if zip_file_path.exists() and not extract_dir.exists():
+            print("🏴‍☠️ Ahoy! Extracting data treasure from zip file...")
+            try:
+                with zipfile.ZipFile(zip_file_path, 'r') as zip_ref:
+                    zip_ref.extractall(extract_dir)
+                print("⚓ Data successfully extracted, matey!")
+            except Exception as e:
+                print(f"🚨 Blimey! Error extracting data: {e}")
+                raise RuntimeError(f"Failed to extract data from zip file: {e}")
     
     def _setup_default_sources(self):
         """Set up the default data sources we know about"""

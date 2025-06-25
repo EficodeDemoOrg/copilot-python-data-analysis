@@ -56,12 +56,33 @@ This application is designed specifically for **data analysts** who need:
 
 ## 🏴‍☠️ Setup Instructions
 
-### 1. Data Setup (Already Done!)
+### 1. Data Setup
 
-The Stack Overflow 2023 survey data is already available in the `data/kaggle_so_2023/` directory with:
-- `survey_results_public.csv` - Main survey responses
-- `survey_results_schema.csv` - Data schema and column descriptions
-- Additional documentation files
+The Stack Overflow 2023 survey data is provided as a compressed zip file to keep the repository size manageable:
+
+**Option A: Automatic Extraction (Recommended)**
+- The application will automatically extract `data/kaggle_so_2023_data.zip` when first run
+- No manual action needed - just start the server!
+
+**Option B: Manual Extraction**
+```bash
+# Navigate to the data directory
+cd data
+
+# Extract the zip file
+unzip kaggle_so_2023_data.zip
+
+# This creates the kaggle_so_2023/ directory with:
+# - survey_results_public.csv (151MB - main survey responses)
+# - survey_results_schema.csv (data schema and column descriptions)
+# - Additional documentation files
+```
+
+**Data Contents:**
+- `survey_results_public.csv` - Main survey responses (151MB)
+- `survey_results_schema.csv` - Data schema and column descriptions  
+- `so_survey_2023.pdf` - Survey documentation
+- `README_2023.txt` - Additional information
 
 ### 2. Install Dependencies
 

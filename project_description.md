@@ -22,10 +22,12 @@ This is a **full-stack web application** designed specifically for **data analys
 - **Responsive**: Works on desktop, tablet, and mobile devices
 
 ### Data Layer
-- **Source**: Stack Overflow Developer Survey 2023 (CSV format)
+- **Source**: Stack Overflow Developer Survey 2023 (provided as compressed zip)
+- **Format**: CSV format with automatic extraction on first run
 - **Schema**: Structured data with schema validation
 - **Processing**: Semicolon-separated technology lists parsed and analyzed
 - **Validation**: Built-in data quality checks and error handling
+- **Size Management**: Large data files (151MB) compressed to 20MB for repository distribution
 
 ## Project Structure
 
@@ -36,8 +38,9 @@ python-fullstack/
 ├── .gitignore                     # Git exclusions
 │
 ├── data/                          # Data storage
-│   └── kaggle_so_2023/           # Stack Overflow 2023 survey data
-│       ├── survey_results_public.csv    # Main survey responses
+│   ├── kaggle_so_2023_data.zip   # Compressed survey data (20MB)
+│   └── kaggle_so_2023/           # Extracted survey data (auto-created)
+│       ├── survey_results_public.csv    # Main survey responses (151MB)
 │       ├── survey_results_schema.csv    # Data schema definitions
 │       └── ...                    # Additional documentation
 │
