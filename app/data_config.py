@@ -138,8 +138,8 @@ class DataManager:
         discovered = self._discover_data_sources()
 
         # Configure Stack Overflow 2023 Survey if found
-        if "kaggle_so_2023" in discovered:
-            so_2023 = discovered["kaggle_so_2023"]
+        if "kaggle_so_2023_data" in discovered:
+            so_2023 = discovered["kaggle_so_2023_data"]
             self.register_data_source(
                 DataSource(
                     name="stackoverflow_2023",
@@ -172,7 +172,7 @@ class DataManager:
 
         # Auto-configure other discovered data sources with generic settings
         for dir_name, files_info in discovered.items():
-            if dir_name != "kaggle_so_2023":  # Skip already configured ones
+            if dir_name not in ["kaggle_so_2023_data"]:  # Skip already configured ones
                 # Try to detect common column patterns by loading a sample
                 try:
                     sample_df = pd.read_csv(files_info["data_file"], nrows=1)

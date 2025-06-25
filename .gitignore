@@ -49,19 +49,10 @@ ehthumbs.db
 Thumbs.db
 
 # Data files (these be large treasures that shouldn't go in git)
-data/kaggle_so_2023/
-# But keep the zip file for distribution
+# Ignore everything in data/ directory
+data/*
+# But keep the zip file for distribution, arrr!
 !data/kaggle_so_2023_data.zip
-data/*.csv
-data/*.json
-data/*.xlsx
-
-# Large data files - too big for GitHub's hold
-data/kaggle_so_2023_data/
-data/kaggle_so_2023_data.zip
-data/kaggle_so_2023/
-*.csv
-*.zip
 
 # Test coverage
 .coverage
