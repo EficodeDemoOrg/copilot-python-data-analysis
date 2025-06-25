@@ -113,37 +113,37 @@ Every exercise follows this structured approach:
 
 *📖 Reference `copilot-cheatsheet.md` for advanced context variables and commands useful in agent workflows*
 
-**Exercise 1: Intelligent Refactoring Agent** *(Estimated: 3-4 hours with agent)*
+**Exercise 1: Intelligent Refactoring Agent**
 - **Complexity:** High - Full architectural transformation
 - **Agent Autonomy:** High - Requires sophisticated planning and execution
 - **Human Oversight:** Architecture decisions, refactoring strategy approval
 - **Best for:** Developers comfortable with AI-driven architectural changes
 
-**Exercise 2: Data Science Agent Partnership** *(Estimated: 2-3 hours with agent)*
+**Exercise 2: Data Science Agent Partnership**
 - **Complexity:** Medium - Statistical analysis and visualization
 - **Agent Autonomy:** Medium - Requires validation of analytical approaches
 - **Human Oversight:** Analysis methodology, statistical validity confirmation
 - **Best for:** Data professionals exploring AI-assisted analytics
 
-**Exercise 3: System Integration Agent** *(Estimated: 3-4 hours with agent)*
+**Exercise 3: System Integration Agent**
 - **Complexity:** High - Multi-source data architecture changes
 - **Agent Autonomy:** High - Requires comprehensive system understanding
 - **Human Oversight:** Integration strategy, data integrity validation
 - **Best for:** System architects exploring AI-driven integration solutions
 
-**Exercise 4: Quality Assurance Agent** *(Estimated: 2-3 hours with agent)*
+**Exercise 4: Quality Assurance Agent**
 - **Complexity:** Medium - Comprehensive testing strategy implementation
 - **Agent Autonomy:** Medium - Requires test strategy validation
 - **Human Oversight:** Testing approach approval, coverage requirements
 - **Best for:** QA professionals and test-driven development advocates
 
-**Exercise 5: Performance Engineering Agent** *(Estimated: 3-4 hours with agent)*
+**Exercise 5: Performance Engineering Agent**
 - **Complexity:** High - Performance analysis and optimization
 - **Agent Autonomy:** Medium - Requires performance target validation
 - **Human Oversight:** Optimization strategy, performance benchmarks
 - **Best for:** Performance engineers and production-focused developers
 
-**Exercise 6: Security Hardening Agent** *(Estimated: 2-3 hours with agent)*
+**Exercise 6: Security Hardening Agent**
 - **Complexity:** Medium - Security analysis and implementation
 - **Agent Autonomy:** Medium - Requires security policy validation
 - **Human Oversight:** Security requirements, compliance validation

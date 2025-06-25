@@ -34,7 +34,7 @@ python-fullstack/
 │   ├── copilot-advanced-exercises.md     # Mode selection guide
 │   ├── copilot-advanced-mode-a.md        # Hands-on track (8-12 hrs)
 │   ├── copilot-advanced-mode-b.md        # Agent-driven track (12-18 hrs)
-│   └── copilot-ci-exercise.md            # DevOps with Act (45-60 min)
+│   └── copilot-ci-exercise.md            # DevOps with Act
 │
 └── tests/
     ├── __init__.py
@@ -303,10 +303,10 @@ This treasure be open source - use it freely for yer data analysis adventures, b
 | Exercise | Link | Description | Requirements |
 |----------|------|-------------|--------------|
 | **Cheatsheet** | [`copilot-cheatsheet.md`](exercises/copilot-cheatsheet.md) | Quick reference for context variables and commands | None |
-| **Beginner** | [`copilot-beginner-exercises.md`](exercises/copilot-beginner-exercises.md) | Foundation Copilot skills (2-3 hours) | Basic Python, VS Code + Copilot |
-| **Advanced Mode A** | [`copilot-advanced-mode-a.md`](exercises/copilot-advanced-mode-a.md) | Hands-on development track (8-12 hours) | Intermediate Python/FastAPI |
-| **Advanced Mode B** | [`copilot-advanced-mode-b.md`](exercises/copilot-advanced-mode-b.md) | Agent-driven development track (12-18 hours) | Advanced Python, architecture knowledge |
-| **CI/CD with Act** | [`copilot-ci-exercise.md`](exercises/copilot-ci-exercise.md) | Local GitHub Actions workflow (45-60 min) | **Docker Desktop, Act installation** |
+| **Beginner** | [`copilot-beginner-exercises.md`](exercises/copilot-beginner-exercises.md) | Foundation Copilot skills | Basic Python, VS Code + Copilot |
+| **Advanced Mode A** | [`copilot-advanced-mode-a.md`](exercises/copilot-advanced-mode-a.md) | Hands-on development track | Intermediate Python/FastAPI |
+| **Advanced Mode B** | [`copilot-advanced-mode-b.md`](exercises/copilot-advanced-mode-b.md) | Agent-driven development track | Advanced Python, architecture knowledge |
+| **CI/CD with Act** | [`copilot-ci-exercise.md`](exercises/copilot-ci-exercise.md) | Local GitHub Actions workflow | **Docker Desktop, Act installation** |
 
 Choose based on your experience level and preferred learning style. Start with the Cheatsheet for quick reference or Beginner exercises if new to Copilot.
 

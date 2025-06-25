@@ -32,13 +32,12 @@ This exercise requires the following to be installed and available on your syste
 
 **Goal**: Set up Act to run GitHub Actions locally and optimize CI workflows with Copilot assistance.
 
-**Time**: 45-60 minutes  
 **Difficulty**: Beginner to Intermediate  
 **Focus**: DevOps tooling, local development workflows, CI/CD optimization
 
 ---
 
-## Phase 1: Installation and Setup (15-20 minutes)
+## Phase 1: Installation and Setup
 
 ### Step 1: Verify Prerequisites
 
@@ -104,7 +103,7 @@ Help me troubleshoot:
 
 ---
 
-## Phase 2: Running Local CI Pipeline (15-20 minutes)
+## Phase 2: Running Local CI Pipeline
 
 ### Step 1: Analyze Our Workflow
 
@@ -179,7 +178,7 @@ Help me understand and fix:
 
 ---
 
-## Phase 3: Optimization and Integration (10-15 minutes)
+## Phase 3: Optimization and Integration
 
 ### Step 1: Create Local Development Commands
 

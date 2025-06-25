@@ -47,37 +47,37 @@ Master these sophisticated techniques throughout all exercises:
 
 Choose exercises based on your development interests and skill areas:
 
-**Exercise 1: Modular Architecture Refactoring** *(Time: 2-3 hours)*
+**Exercise 1: Modular Architecture Refactoring**
 - **Skills:** API design, module organization, import management, test restructuring
 - **Copilot Focus:** Multi-file refactoring, APIRouter implementation, test migration
 - **Best for:** Senior developers, architects, maintainability enthusiasts
 
-**Exercise 2: Advanced Data Analysis Pipeline** *(Time: 1-2 hours)*
+**Exercise 2: Advanced Data Analysis Pipeline**
 - **Skills:** Pandas operations, statistical analysis, Chart.js customization, API design
 - **Copilot Focus:** Complex data transformations, visualization configuration, correlation analysis
 - **Best for:** Data scientists, analysts, full-stack developers
 
-**Exercise 3: Multi-Source Data Integration** *(Time: 2-3 hours)*
+**Exercise 3: Multi-Source Data Integration**
 - **Skills:** Dynamic configuration, data pipeline design, frontend state management
 - **Copilot Focus:** File system operations, dynamic API design, JavaScript state handling
 - **Best for:** System integrators, platform developers, data engineers
 
-**Exercise 4: Comprehensive Testing Strategy** *(Time: 1-2 hours)*
+**Exercise 4: Comprehensive Testing Strategy**
 - **Skills:** Integration testing, performance testing, mocking, test fixtures
 - **Copilot Focus:** Test generation, mocking strategies, performance measurement
 - **Best for:** QA engineers, TDD practitioners, quality-focused developers
 
-**Exercise 5: Performance Optimization** *(Time: 2-3 hours)*
+**Exercise 5: Performance Optimization**
 - **Skills:** Profiling, caching, memory management, response optimization
 - **Copilot Focus:** Performance analysis, caching implementation, optimization strategies
 - **Best for:** Performance engineers, backend specialists, production developers
 
-**Exercise 6: Security and Code Quality** *(Time: 1-2 hours)*
+**Exercise 6: Security and Code Quality**
 - **Skills:** Input validation, security headers, error handling, logging
 - **Copilot Focus:** Security analysis, validation implementation, audit assistance
 - **Best for:** Security engineers, senior developers, production-focused teams
 
-**Exercise 6: Security and Code Quality** *(Time: 1-2 hours)*
+**Exercise 6: Security and Code Quality**
 - **Skills:** Input validation, security headers, error handling, logging
 - **Copilot Focus:** Security analysis, validation implementation, audit assistance
 - **Best for:** Security engineers, senior developers, production-focused teams
