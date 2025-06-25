@@ -59,6 +59,7 @@ data/*.xlsx
 # Large data files - too big for GitHub's hold
 data/kaggle_so_2023_data/
 data/kaggle_so_2023_data.zip
+data/kaggle_so_2023/
 *.csv
 *.zip
 
