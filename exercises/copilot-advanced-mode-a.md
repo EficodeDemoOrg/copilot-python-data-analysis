@@ -15,15 +15,21 @@ Master these sophisticated techniques throughout all exercises:
 
 **Advanced Slash Commands**
 - `/tests` with specific context for comprehensive test generation
-- `/doc` for architectural documentation and API specifications
+- `/docs` for architectural documentation and API specifications
 - `/explain` with multi-file context for system understanding
 - `/fix` for automated error resolution with context awareness
+- `/setupTests` for configuring testing frameworks
+
+*📖 See `copilot-cheatsheet.md` for full command reference*
 
 **Precision Context Variables**
 - `#selection` for targeted code analysis and modification
-- `#usage:app.data_config.DataManager.analyze_technology_usage` for tracing function dependencies
 - `#codebase` for broad architectural questions
-- `#terminal` for debugging command outputs
+- `#problems` for debugging issues from Problems panel
+- `#testFailure` for diagnosing failing tests
+- `#terminalLastCommand` for understanding command errors
+
+*📖 See `copilot-cheatsheet.md` for comprehensive context variable reference*
 
 **Strategic Inline Chat Usage**
 - Use `Cmd+I`/`Ctrl+I` for complex refactoring within functions
@@ -381,6 +387,8 @@ Choose exercises based on your development interests and skill areas:
 
    Analyze the existing test coverage. What types of tests are missing? How can we improve test organization and add integration testing, performance testing, and edge case coverage?
    ```
+   
+   *💡 Pro tip: Use `/setupTests` to get framework-specific testing recommendations*
 
 2. **Test Strategy Development:**
    ```

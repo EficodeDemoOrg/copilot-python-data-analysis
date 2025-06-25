@@ -111,6 +111,8 @@ Every exercise follows this structured approach:
 
 **Important:** These exercises are designed for agent-driven development. Choose based on your comfort level with delegating implementation to AI while maintaining strategic oversight.
 
+*📖 Reference `copilot-cheatsheet.md` for advanced context variables and commands useful in agent workflows*
+
 **Exercise 1: Intelligent Refactoring Agent** *(Estimated: 3-4 hours with agent)*
 - **Complexity:** High - Full architectural transformation
 - **Agent Autonomy:** High - Requires sophisticated planning and execution
@@ -267,7 +269,7 @@ Format this as THREAD_SUMMARY.md for handoff to a fresh agent.
 
 **Problem Space Exploration:**
 ```
-@workspace I want to add advanced correlation analysis to our application. Before designing solutions, please:
+@workspace I want to add advanced correlation analysis to our application #codebase. Before designing solutions, please:
 
 1. Analyze the current data structure and available columns
 2. Research best practices for correlation analysis in survey data
@@ -276,6 +278,8 @@ Format this as THREAD_SUMMARY.md for handoff to a fresh agent.
 
 Confirm your understanding of our data quality, sample sizes, and statistical requirements before proposing specific implementations.
 ```
+
+*💡 Use `#codebase` to give the agent full project context for data analysis*
 
 ### Phase 2: Specification Creation
 
