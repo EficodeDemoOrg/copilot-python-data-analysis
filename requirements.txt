@@ -10,3 +10,7 @@ pandas
 pytest
 requests
 httpx
+
+# For code formatting and linting
+black
+flake8

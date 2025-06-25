@@ -1,0 +1,22 @@
+[flake8]
+max-line-length = 88
+exclude = 
+    .git,
+    __pycache__,
+    .venv,
+    .eggs,
+    *.egg,
+    build,
+    dist,
+    .pytest_cache
+
+ignore = 
+    E203,
+    W503,
+    E501
+
+# Show source code for each error
+show-source = True
+show-pep8 = True
+statistics = True
+count = True

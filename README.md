@@ -56,27 +56,69 @@ This application is designed specifically for **data analysts** who need:
 
 ## 🏴‍☠️ Setup Instructions
 
-### 1. Data Setup
+### 1. Data Setup (Smart Zip Management System)
 
-The Stack Overflow 2023 survey data is provided as a compressed zip file to keep the repository size manageable:
+The application features an **intelligent data management system** designed for data analysts who work with multiple datasets:
 
-**Option A: Automatic Extraction (Recommended)**
-- The application will automatically extract `data/kaggle_so_2023_data.zip` when first run
-- No manual action needed - just start the server!
+#### 🤖 Automatic Data Source Detection
+- **Zero Configuration**: Drop any survey data zip file into `data/` folder
+- **Auto-Extraction**: Zip files are automatically extracted on application startup
+- **Smart Detection**: CSV files are automatically discovered and configured
+- **Technology Analysis**: Columns with semicolon-separated tech lists are auto-detected
 
-**Option B: Manual Extraction**
-```bash
-# Navigate to the data directory
-cd data
+#### 📦 Current Data Sources
+- **Stack Overflow 2023**: `kaggle_so_2023.zip` (20MB compressed → 151MB extracted)
+  - Contains `survey_results_public.csv` with 89,000+ developer responses
+  - Includes `survey_results_schema.csv` with column definitions
+  - Pre-configured with 8 technology analysis categories
 
-# Extract the zip file
-unzip kaggle_so_2023_data.zip
+#### ➕ Adding New Data Sources (Open-Ended Design)
+Perfect for data analysts working with multiple survey datasets:
 
-# This creates the kaggle_so_2023/ directory with:
-# - survey_results_public.csv (151MB - main survey responses)
-# - survey_results_schema.csv (data schema and column descriptions)
-# - Additional documentation files
+1. **Prepare Your Data**:
+   ```
+   your_survey_data/
+   ├── main_survey_responses.csv     # Main data (any CSV name works)
+   ├── schema_definitions.csv        # Optional (detected by "schema" in name)
+   └── documentation.txt             # Additional files (ignored)
+   ```
+
+2. **Create Zip Archive**:
+   ```bash
+   zip -r your_survey_2024.zip your_survey_data/
+   ```
+
+3. **Deploy to Application**:
+   ```bash
+   cp your_survey_2024.zip /path/to/project/data/
+   # Application auto-detects and configures on next startup
+   ```
+
+4. **Automatic Configuration**:
+   - Main data file detected (largest CSV or one with "survey"/"results" in name)
+   - Schema file detected (contains "schema" in filename)
+   - Technology columns identified (contain "language", "database", "platform", etc.)
+   - New data source registered and available in dashboard
+
+#### 🔍 Data Format Requirements
+- **Primary Format**: CSV files with semicolon-separated technology lists
+- **Column Detection**: Automatic detection of technology-related columns
+- **Schema Support**: Optional schema files for column descriptions
+- **Size Limit**: Zip files should be under GitHub's 100MB limit
+
+#### 📊 Example Multi-Source Setup
 ```
+data/
+├── kaggle_so_2023.zip              # Stack Overflow 2023
+├── kaggle_so_2023/                 # Auto-extracted
+├── github_dev_survey_2024.zip      # Your GitHub survey
+├── github_dev_survey_2024/         # Auto-extracted
+├── company_internal_survey.zip     # Internal survey
+├── company_internal_survey/        # Auto-extracted
+└── .gitignore                      # Excludes CSV files, includes zips
+```
+
+Each data source becomes automatically available in the dashboard with detected technology categories!
 
 **Data Contents:**
 - `survey_results_public.csv` - Main survey responses (151MB)
