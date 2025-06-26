@@ -4,6 +4,36 @@ Welcome to the advanced hands-on GitHub Copilot training! This document is desig
 
 The goal is to use Copilot as your intelligent pair programming partner for complex software engineering tasks, where you drive the architecture and decision-making while leveraging AI assistance for implementation details.
 
+> 🏴‍☠️ If ye be into testing, skip to the end for an optional Playwri### If Playwright be new to ye:
+
+**Discovery Phase:**
+- Ask Copilot: `What is Playwright and how would it benefit testing this FastAPI + HTML dashboard application?`
+- Use `#codebase` context: "Based on this project structure, what would be the most valuable E2E test scenarios?"
+
+**Hands-On Learning:**
+1. **Installation:** Choose Python or Node.js and install Playwright yourself
+2. **Basic Test Creation:** 
+   - Create your first test file in your chosen location
+   - **Inline Chat:** "Write a simple Playwright test that opens localhost:8000 and checks the page title"
+3. **Dashboard-Specific Tests:**
+   - Select the dashboard HTML and ask: "Help me write tests for the technology analysis workflow"
+   - Use `#openSimpleBrowser` to understand the user flow while writing tests
+4. **Advanced Scenarios:**
+   - Add tests for API integration, chart rendering, error states
+   - **Inline Chat:** "Add screenshot capture and test reporting to this Playwright test"
+
+**Key Test Scenarios to Implement:**
+- Dashboard loads successfully
+- API calls return data and populate charts
+- User interactions (dropdowns, buttons) work correctly
+- Error handling displays proper messages
+- Data source switching functions properly
+
+**Integration Tips:**
+- Run tests with `npx playwright test` (Node.js) or `pytest` (Python) 
+- Add to CI pipeline by creating your own workflow
+- Use Copilot to help generate test reports and debugging utilitiescise!
+
 ## Essential Advanced Copilot Features
 
 Master these sophisticated techniques throughout all exercises:
@@ -554,4 +584,38 @@ Choose exercises based on your development interests and skill areas:
 
 ---
 
-These exercises are designed to challenge your mastery of advanced Copilot features while building real-world, production-ready software. Focus on understanding each suggestion, validating the generated code, and adapting it to your specific needs. Remember: you are the architect—Copilot is your intelligent implementation partner.
+## Optional Exercise: End-to-End Testing with Playwright 🏴‍☠️
+
+Yarr! If ye be a fan of testin’ the whole ship from stem to stern, this be for ye. Playwright lets ye test yer dashboard in real browsers, just like a real user.
+
+### If ye already know Playwright:
+
+**Setup and Structure (You Choose):**
+- Create your E2E test directory structure (`tests/e2e/`, `e2e/`, or wherever ye prefer)
+- Install Playwright: `pip install playwright` (Python) or `npm install playwright` (Node.js)
+- Use `#openSimpleBrowser` to preview the dashboard while developing tests
+
+**Test Development with Copilot:**
+- **Step 1:** Create a basic test file and ask Copilot: 
+  ```
+  #file:app/templates/index.html #file:app/main.py
+  
+  Help me write a Playwright test that loads the dashboard, clicks the analysis button, and verifies a chart appears. Use the existing API endpoints and HTML structure.
+  ```
+- **Step 2:** Select your test code and use **Inline Chat:** "Add assertions for chart data and error handling"
+- **Step 3:** Expand with more complex user journeys (change data sources, modify parameters, etc.)
+
+### If Playwright be new to ye:
+- Ask Copilot: `What is Playwright and how can I use it for E2E testing in this project?`
+- Use `/explain` and `/setupTests` to:
+    1. Learn what Playwright does and why it’s useful
+    2. Scaffold a basic E2E test (e.g., check dashboard loads, API returns data, chart renders)
+    3. Get Copilot to write a test that clicks buttons, fills forms, or checks chart output
+    4. Use `#openSimpleBrowser` to see the app in action
+- Try both Python and Node.js Playwright flavors—Copilot can help with either!
+
+**Bonus:**
+- Add E2E tests to your CI pipeline for true production-readiness
+- Use Copilot to generate test reports and screenshots
+
+*For more, see [Playwright for Python](https://playwright.dev/python/) or [Playwright for JS](https://playwright.dev/)*

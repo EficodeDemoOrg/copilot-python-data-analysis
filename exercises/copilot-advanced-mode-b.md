@@ -2,7 +2,33 @@
 
 Welcome to the agent-driven GitHub Copilot training! This document is designed for developers who want to explore the cutting edge of AI-assisted software development using GitHub Copilot as an autonomous development agent.
 
-**⚠️ Important:** This mode requires a fundamentally different mindset. You are not making wishes—you are providing strategic direction, maintaining oversight, and ensuring quality at every step. The agent executes, but you remain the architect and decision-maker.
+**⚠️ Important:** This mode requires a fundamentally different mindset. You are not making wishes—you are providing strategic direction, maintaining oversight, and ensuring quality at every step. The agent executes, but you remain the architect and decis### If Playwright be new to ye:
+
+**Agent-Guided Learning and Implementation:**
+```
+@workspace I'm new to Playwright and want to implement E2E testing for this dashboard. Please:
+
+1. Explain what Playwright is and why it's valuable for this type of application
+2. Analyze our current project structure to recommend the best E2E testing approach
+3. Guide me through setting up Playwright with our FastAPI + HTML dashboard
+4. Create a comprehensive E2E test that validates the full user workflow
+5. Include instructions for running tests and integrating with our development process
+
+Consider both Python and Node.js options and recommend the best fit for our stack.
+```
+
+**Key Agent-Driven Test Scenarios:**
+- Dashboard loads and initializes correctly
+- API integration and data flow validation
+- User interface interactions (dropdowns, buttons, forms)
+- Chart rendering and data visualization validation
+- Error handling and edge case coverage
+- Cross-browser compatibility testing
+
+**Integration and CI/CD:**
+- Use `#openSimpleBrowser` to validate user experience during development
+- Have the agent create CI pipeline integration
+- Generate test reports and debugging utilities> 🏴‍☠️ If ye be into testing, skip to the end for an optional Playwright E2E exercise!
 
 ## Prerequisites: Setting Up Agent-Driven Development
 
@@ -532,18 +558,40 @@ Validate security implementations with security testing tools.
 
 ---
 
-## Critical Success Factors for Agent-Driven Development
+## Optional Exercise: End-to-End Testing with Playwright 🏴‍☠️
 
-**Human Responsibilities:**
-1. **Strategic Oversight:** Always approve architectural decisions before implementation
-2. **Quality Gates:** Validate each phase before proceeding to the next
-3. **Risk Management:** Understand the implications of each change
-4. **Knowledge Transfer:** Ensure you understand what the agent has implemented
+Yarr! If ye want to test the whole dashboard like a true pirate, Playwright be the tool for E2E adventures.
 
-**Agent Responsibilities:**
-1. **Transparency:** Explain all decisions and implementations clearly
-2. **Validation:** Confirm understanding before proceeding with complex changes
-3. **Documentation:** Maintain comprehensive documentation of all changes
-4. **Testing:** Ensure comprehensive testing at every step
+### If ye already know Playwright:
 
-**Remember:** The agent is your implementation partner, not your replacement. You remain accountable for all architectural decisions, code quality, and system behavior. Use this mode to explore the possibilities of AI-assisted development while maintaining professional responsibility for the outcomes.
+**Agent-Driven Test Development:**
+- Set up your E2E test structure (`tests/e2e/`, `e2e/`, or wherever ye prefer)
+- Install Playwright: `pip install playwright` (Python) or `npm install playwright` (Node.js)
+- Use `#openSimpleBrowser` to preview the dashboard during development
+
+**Agent Collaboration for E2E Tests:**
+```
+@workspace I want to create comprehensive E2E tests for this dashboard application using Playwright. Please:
+
+1. Analyze the existing HTML structure and API endpoints
+2. Design a test strategy that covers the full user workflow
+3. Generate Playwright tests for dashboard loading, user interactions, and chart validation
+4. Include proper error handling and edge case testing
+
+Use the existing project structure and maintain consistency with our testing patterns.
+```
+
+### If Playwright be new to ye:
+- Ask Copilot: `What is Playwright and how can I use it for E2E testing in this project?`
+- Use `/explain` and `/setupTests` to:
+    1. Learn what Playwright does and why it’s useful
+    2. Scaffold a basic E2E test (dashboard loads, API returns data, chart appears)
+    3. Get Copilot to write a test that clicks, fills, or checks chart output
+    4. Use `#openSimpleBrowser` to see the app in action
+- Try both Python and Node.js Playwright flavors—Copilot can help with either!
+
+**Bonus:**
+- Add E2E tests to your CI pipeline for true production-readiness
+- Use Copilot to generate test reports and screenshots
+
+*For more, see [Playwright for Python](https://playwright.dev/python/) or [Playwright for JS](https://playwright.dev/)*
